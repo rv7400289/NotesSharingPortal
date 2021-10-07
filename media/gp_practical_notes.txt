@@ -1,0 +1,26 @@
+GP practical 2
+Theory:
+
+buffers
+sheders
+mesh filter
+mesh render
+
+
+Gp Practical 3
+
+add cube and plain
+now click assets and select (2)material and name it
+now go to properties to color 
+now drag the material to objects to get them color
+now click on assets to import new assets(images)
+
+practical 4
+
+lighting
+
+code:
+
+
+practical 5
+

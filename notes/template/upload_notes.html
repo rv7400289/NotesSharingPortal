@@ -1,0 +1,118 @@
+{% extends 'usernavigation.html'%}
+{% block body %}
+{% load static %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center">UPLOAD NOTES </h2>
+        <hr>
+    <div class="row">
+
+
+        <div class="col-sm-6">
+
+
+
+            <form method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    <label>Branch</label>
+
+
+                    <select class="form-control" name="branch">
+
+                        <option value="">---Select Branch---</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Commerce">Commerce</option>
+                        <option value="Arts">Arts</option>
+                        <option value="Business">Business</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Medical Science">Medical Science</option>
+
+
+
+                    </select>
+
+
+
+                    <label>Subject</label>
+                    <input type="text" class="form-control" placeholder="Enter Subject Name" name="subject" >
+
+
+
+                    <label>Notes File</label>
+                    <input type="file" class="form-control"  name="notesfile" >
+
+
+
+                    <label>File Type</label>
+
+
+                        <select class="form-control" name="filetype">
+
+                            <option value="">---Select File Type---</option>
+                        <option value="PDF">PDF</option>
+                        <option value="DOC">DOC/DOCX</option>
+                        <option value="TXT">TXT</option>
+                        <option value="IMAGE">IMAGE</option>
+                        <option value="XLS">XLS</option>
+                        <option value="ZIP/RAR">ZIP/RAR</option>
+                        <option value="MP4">MP4</option>
+
+                        </select>
+
+
+                    <label>Description</label>
+
+                        <textarea class="form-control" name="description"></textarea>
+
+
+                <input type="submit" class="btn btn-danger mt-2" value="Submit">
+
+                </form>
+        </div>
+
+
+        <div class="col-sm-6">
+            <img src="{% static 'images/best2.png'%}" style="width:100%;height:400px" class="mt-2">
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+
+
+{% ifequal error "no" %}                               <!--To show Notes Uploaded Successfully-->
+
+<script>
+    alert('Notes Uploaded Successfully');
+
+
+</script>
+
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+
+    alert('Something went wrong,Try Again');
+
+</script>
+
+{% endifequal %}
+
+
+
+
+
+
+
+
+{% endblock%}
